@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Home } from './components/home/Home';
+import Layout from './components/Layout';
+import { Route, Switch } from 'react-router';
+import TaskList from './components/tasks/TaskList';
+import CreateTask from './components/tasks/CreateTask';
+import EditTask from './components/tasks/EditTask';
+import { InitAxios } from './api/HttpCommon';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    InitAxios();
+    
+    return (
+        <Layout>
+            <Switch>
+                <Route exact path='/'> <Home /> </Route>
+                <Route path='/tasks/create'> <CreateTask /> </Route>
+                <Route path='/tasks/:id/edit'> <EditTask /> </Route>
+                <Route path='/tasks'> <TaskList /> </Route>
+            </Switch>
+        </Layout>
+    );
 }
 
 export default App;
