@@ -5,6 +5,7 @@ import TaskList from './components/tasks/TaskList';
 import CreateTask from './components/tasks/CreateTask';
 import EditTask from './components/tasks/EditTask';
 import { InitAxios } from './api/HttpCommon';
+import { NotFound } from './components/NotFound';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
                 <Route path='/tasks/create'> <CreateTask /> </Route>
                 <Route path='/tasks/:id/edit'> <EditTask /> </Route>
                 <Route path='/tasks'> <TaskList /> </Route>
+                <Route path='*'> <NotFound /> </Route>
             </Switch>
         </Layout>
     );
