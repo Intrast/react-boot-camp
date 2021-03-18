@@ -33,7 +33,7 @@ export default function TaskList() {
 
     return(
         <>
-            <Grid container direction="row" justify="space-beetwen" alignItems="baseline">
+            <Grid container direction="row" justify="space-between" alignItems="baseline">
                 <Button component={Link} to="/tasks/create" variant="contained" color="primary">Create</Button>
                 <TextField size="small" label="search by title" variant="outlined" onChange={e => setContainsTitle(e.target.value)}></TextField>
                 <Pagination page={page} count={Math.ceil(count / pageSize)} onChange={handlePageChange}></Pagination>

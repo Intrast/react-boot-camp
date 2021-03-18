@@ -1,7 +1,7 @@
 import http from 'axios';
 
 export async function getPublicTasks({ page, pageSize, containsTitle }) {
-    const responce = await http.get('tasks/allowanonymous', {
+    const responce = await http.get('tasks', {
         params: {page, perPage: pageSize, containsTitle }
     });
 
